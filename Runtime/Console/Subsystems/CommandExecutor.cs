@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Tetraizor.Bootstrap.Base;
 using UnityEngine;
 
-public class CommandExecutor : MonoBehaviour
+public class CommandExecutor : MonoBehaviour, IPersistentSubsystem
 {
     #region Properties
 
@@ -22,21 +23,7 @@ public class CommandExecutor : MonoBehaviour
 
     #endregion
 
-    #region Base Methods
-
-    public void Init(ConsoleSystem consoleSystem)
-    {
-        // Register commands.
-        ConsoleCommandBase[] commands = GetComponentsInChildren<ConsoleCommandBase>();
-
-        foreach (ConsoleCommandBase command in commands)
-        {
-            _commands.Add(command.name, command);
-        }
-
-        // Assign references.
-        _consoleSystem = consoleSystem;
-    }
+    #region Public Methods
 
     public bool ExecuteCommand(string commandFullLine)
     {
@@ -77,6 +64,29 @@ public class CommandExecutor : MonoBehaviour
 
         command.Execute(commandParameters);
         return true;
+    }
+
+    #endregion
+
+    #region IPersistentSubsystem Methods
+
+    public string GetSystemName()
+    {
+        return "Console System";
+    }
+
+    public void Init(IPersistentSystem system)
+    {
+        // Register commands.
+        ConsoleCommandBase[] commands = GetComponentsInChildren<ConsoleCommandBase>();
+
+        foreach (ConsoleCommandBase command in commands)
+        {
+            _commands.Add(command.name, command);
+        }
+
+        // Assign references.
+        _consoleSystem = (ConsoleSystem)system;
     }
 
     #endregion

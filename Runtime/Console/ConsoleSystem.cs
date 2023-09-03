@@ -105,9 +105,13 @@ public class ConsoleSystem : MonoSingleton<ConsoleSystem>, IPersistentSystem
             _consoleInput.interactable = false;
 
             if (EventSystem.current != null)
+            {
                 EventSystem.current.SetSelectedGameObject(null);
+            }
             else
-                print("No event system");
+            {
+                print("No EventSystem present in current scene.");
+            }
         }
     }
 
@@ -150,9 +154,13 @@ public class ConsoleSystem : MonoSingleton<ConsoleSystem>, IPersistentSystem
         _isOn = false;
         ToggleConsoleFunctionality(false);
 
-        // Initialize child components.
-        GetComponentInChildren<CommandExecutor>().Init(this);
-        GetComponentInChildren<ConsoleInputManager>().Init(this);
+        // Initialize subsystems.
+        IPersistentSubsystem[] subsystems = gameObject.GetComponentsInChildren<IPersistentSubsystem>(true);
+
+        foreach (IPersistentSubsystem subsystem in subsystems)
+        {
+            subsystem.Init(this);
+        }
 
         yield return null;
     }
