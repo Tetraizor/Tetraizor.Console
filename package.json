@@ -1,0 +1,21 @@
+{
+  "name": "com.tetraizor.console",
+  "displayName": "Console",
+  "version": "1.0.0",
+  "author": {
+    "name": "Umuthan Ozel",
+    "email": "ozelumuthan@gmail.com",
+    "url": "https://umuthanozel.com"
+  },
+  "description": "A debug console that can be toggled both in editor and builds, and also doubles as somewhere to input codes in.",
+  "dependencies": {
+    "com.tetraizor.monosingleton": "https://github.com/Tetraizor/Tetraizor.MonoSingleton.git",
+    "com.tetraizor.bootstrap": "https://github.com/Tetraizor/Tetraizor.Bootstrap.git",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.inputsystem": "1.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tetraizor/Tetraizor.Console.git"
+  }
+}
