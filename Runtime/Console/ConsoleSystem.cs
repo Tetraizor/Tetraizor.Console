@@ -20,7 +20,7 @@ namespace Tetraizor.Systems.Console
         [SerializeField] private Button _submitButton;
 
         [Header("Component References")]
-        [SerializeField] private CommandExecutor _commandExecutor;
+        [SerializeField] private CommandExecutorSubsystem _commandExecutor;
         [SerializeField] private Animator _consoleUIAnimator;
 
         // Console Animator parameter hashes 

@@ -5,7 +5,7 @@ using Tetraizor.Systems.Console.Base;
 
 namespace Tetraizor.Systems.Console.Subsystems
 {
-    public class CommandExecutor : MonoBehaviour, IPersistentSubsystem
+    public class CommandExecutorSubsystem : MonoBehaviour, IPersistentSubsystem
     {
         #region Properties
 
