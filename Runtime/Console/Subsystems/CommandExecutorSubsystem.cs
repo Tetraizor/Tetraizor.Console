@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Tetraizor.Bootstrap.Base;
@@ -78,7 +79,7 @@ namespace Tetraizor.Systems.Console.Subsystems
             return "Console System";
         }
 
-        public void Init(IPersistentSystem system)
+        public IEnumerator LoadSubsystem(IPersistentSystem system)
         {
             // Register commands.
             ConsoleCommandBase[] commands = GetComponentsInChildren<ConsoleCommandBase>();
@@ -90,6 +91,8 @@ namespace Tetraizor.Systems.Console.Subsystems
 
             // Assign references.
             _consoleSystem = (ConsoleSystem)system;
+
+            yield return null;
         }
 
         #endregion

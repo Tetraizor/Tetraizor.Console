@@ -160,7 +160,7 @@ namespace Tetraizor.Systems.Console
 
             foreach (IPersistentSubsystem subsystem in subsystems)
             {
-                subsystem.Init(this);
+                yield return subsystem.LoadSubsystem(this);
             }
 
             yield return null;

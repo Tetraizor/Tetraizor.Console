@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Tetraizor.DebugUtils.Base;
 using Tetraizor.Bootstrap.Base;
@@ -38,10 +39,12 @@ namespace Tetraizor.Systems.Console.Subsystems
             return "Console System";
         }
 
-        public void Init(IPersistentSystem system)
+        public IEnumerator LoadSubsystem(IPersistentSystem system)
         {
             DebugBus.Register(this);
             DebugBus.LogPrint("Console Debugger registered successfully.");
+
+            yield return null;
         }
 
         #endregion
