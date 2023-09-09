@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tetraizor.Systems.Console.Base;
 
-public class ClearCommand : ConsoleCommandBase
+namespace Tetraizor.Systems.Console.Commands
 {
-    public override bool Execute(string fullArgs)
+    public class ClearCommand : ConsoleCommandBase
     {
-        ConsoleSystem.Instance.ClearConsole();
-        return true;
+        public override bool Execute(string fullArgs)
+        {
+            ConsoleSystem.Instance.ClearConsole();
+            return true;
+        }
     }
 }

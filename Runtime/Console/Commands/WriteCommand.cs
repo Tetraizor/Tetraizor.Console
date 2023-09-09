@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tetraizor.Systems.Console.Base;
 
-public class WriteCommand : ConsoleCommandBase
+namespace Tetraizor.Systems.Console.Commands
 {
-    public override bool Execute(string fullArgs)
+    public class WriteCommand : ConsoleCommandBase
     {
-        ConsoleSystem.Instance.WriteLine(fullArgs + '\n');
-        return true;
+        public override bool Execute(string fullArgs)
+        {
+            ConsoleSystem.Instance.WriteLine(fullArgs + '\n');
+            return true;
+        }
     }
 }

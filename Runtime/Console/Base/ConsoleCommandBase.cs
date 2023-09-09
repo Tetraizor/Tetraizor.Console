@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public abstract class ConsoleCommandBase : MonoBehaviour
+namespace Tetraizor.Systems.Console.Base
 {
-    public abstract bool Execute(string fullArgs);
+    public abstract class ConsoleCommandBase : MonoBehaviour
+    {
+        public abstract bool Execute(string fullArgs);
+    }
 }
