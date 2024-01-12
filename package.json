@@ -1,7 +1,7 @@
 {
   "name": "com.tetraizor.console",
   "displayName": "Console",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "name": "Umuthan Ozel",
     "email": "ozelumuthan@gmail.com",
@@ -12,7 +12,7 @@
     "com.tetraizor.monosingleton": "https://github.com/Tetraizor/Tetraizor.MonoSingleton.git",
     "com.tetraizor.bootstrap": "https://github.com/Tetraizor/Tetraizor.Bootstrap.git#1.2.0",
     "com.tetraizor.debugutils": "https://github.com/Tetraizor/Tetraizor.DebugUtils.git#1.2.0",
-    "com.unity.textmeshpro": "3.0.6"
+    "com.unity.ugui": "2.0.0"
   },
   "repository": {
     "type": "git",
